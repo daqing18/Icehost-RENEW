@@ -1,7 +1,9 @@
-name: IceHost Hourly KeepAlive
+Name: IceHost Hourly KeepAlive
 
 on:
-  workflow_dispatch:  # 👈 纯粹的定点打击接口，允许网页手动点击，也允许老版 CF 精准点名
+  schedule:
+    - cron: '0 */6 * * *'  # 🟢 开启自动触发：每 6 小时自动执行一次（北京时间 2点、8点、14点、20点左右）
+  workflow_dispatch:       # 🟢 保留手动触发：允许你在网页上随时点击运行
 
 jobs:
   check-and-start:
@@ -17,7 +19,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # 核心改变：安装 seleniumbase 代替 playwright
           pip install seleniumbase requests
 
       - name: Set up WARP
