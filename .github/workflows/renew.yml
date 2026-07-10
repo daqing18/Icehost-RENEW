@@ -1,4 +1,4 @@
-Name: IceHost Hourly KeepAlive
+name: IceHost Hourly KeepAlive
 
 on:
   schedule:
