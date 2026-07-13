@@ -2,7 +2,7 @@ name: IceHost Hourly KeepAlive
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # 🟢 开启自动触发：每 6 小时自动执行一次（北京时间 2点、8点、14点、20点左右）
+    - cron: '0 */5 * * *'  # 🟢 开启自动触发：每 5 小时自动执行一次（北京时间 2点、7点、12点、17点、22点左右）
   workflow_dispatch:       # 🟢 保留手动触发：允许你在网页上随时点击运行
 
 jobs:
